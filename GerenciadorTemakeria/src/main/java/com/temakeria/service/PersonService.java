@@ -1,8 +1,8 @@
-package com.journaldev.springhibernate.service;
+package com.temakeria.service;
 
 import java.util.List;
 
-import com.journaldev.springhibernate.model.Person;
+import com.temakeria.model.Person;
  
 public interface PersonService {
  

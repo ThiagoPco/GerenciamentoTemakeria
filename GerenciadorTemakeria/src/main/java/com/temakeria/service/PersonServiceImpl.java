@@ -1,4 +1,4 @@
-package com.journaldev.springhibernate.service;
+package com.temakeria.service;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.faces.bean.SessionScoped;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.journaldev.springhibernate.dao.PersonDAO;
-import com.journaldev.springhibernate.model.Person;
+import com.temakeria.dao.PersonDAO;
+import com.temakeria.model.Person;
 
 @Service
 @ManagedBean(name="personService")

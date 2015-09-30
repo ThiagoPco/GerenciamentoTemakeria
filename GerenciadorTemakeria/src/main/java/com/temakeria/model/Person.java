@@ -1,4 +1,4 @@
-package com.journaldev.springhibernate.model;
+package com.temakeria.model;
 
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Column;

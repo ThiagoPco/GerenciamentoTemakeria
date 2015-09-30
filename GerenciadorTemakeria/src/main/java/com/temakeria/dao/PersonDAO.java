@@ -1,8 +1,8 @@
-package com.journaldev.springhibernate.dao;
+package com.temakeria.dao;
 
 import java.util.List;
 
-import com.journaldev.springhibernate.model.Person;
+import com.temakeria.model.Person;
  
 public interface PersonDAO {
  
