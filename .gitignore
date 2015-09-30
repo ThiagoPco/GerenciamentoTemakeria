@@ -1,0 +1,7 @@
+*.pageflow
+GerenciadorTemakeria/.classpath
+*.project
+GerenciadorTemakeria/.settings/.jsdtscope
+*.prefs
+GerenciadorTemakeria/.settings/org.eclipse.wst.common.component
+*.container
