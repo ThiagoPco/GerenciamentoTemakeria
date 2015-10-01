@@ -8,5 +8,4 @@ public interface PersonService {
  
     public void addPerson(Person p);
     public List<Person> listPersons();
-     
 }

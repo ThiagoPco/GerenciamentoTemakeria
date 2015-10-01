@@ -12,8 +12,6 @@ import com.temakeria.dao.PersonDAO;
 import com.temakeria.model.Person;
 
 @Service
-@ManagedBean(name="personService")
-@SessionScoped
 public class PersonServiceImpl implements PersonService {
 
 	private PersonDAO personDAO;
