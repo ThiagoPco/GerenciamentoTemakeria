@@ -2,7 +2,7 @@ package com.temakeria.service;
 
 import java.util.List;
 
-//teste commit
+//rrrr
 public interface GenericService<T> {
 	void salvar(T t);
 	void excluir(Long id);
