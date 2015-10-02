@@ -57,22 +57,27 @@
 
 		</div>
 		<div class="cright">
-			<h2>Formulario de cadastro</h2>
+			<h2>Cadastro de Mesas</h2>
 			<h:form>
 				<table>
 					<tr>
-						<td><label>Name</label></td>
-						<td><p:inputText id="name" value="#{personMB.person.name}">
+						<td><label>Codigo</label></td>
+						<td><p:inputText id="codigo" value="#{mesaMB.mesa.codigo}">
 							</p:inputText></td>
 					</tr>
 					<tr>
-						<td><label>Country</label></td>
-						<td><p:inputText id="country"
-								value="#{personMB.person.country}"></p:inputText></td>
+						<td><label>Qtd. Pessoas</label></td>
+						<td><p:inputText id="qtdPessoas"
+								value="#{mesaMB.mesa.qtdPessoas}"></p:inputText></td>
+					</tr>
+					<tr>
+						<td><label>Descricao</label></td>
+						<td><p:inputTextarea id="descricao"
+								value="#{mesaMB.mesa.qtdPessoas}"></p:inputTextarea></td>
 					</tr>
 					<tr>
 						<td colspan="2"><p:commandButton
-								actionListener="#{personMB.addPerson()}" value="Add Person"
+								actionListener="#{mesaMB.salvarMesa()}" value="Salvar"
 								ajax="false"></p:commandButton></td>
 					</tr>
 				</table>

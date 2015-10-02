@@ -45,16 +45,26 @@
 		</beans:property>
 	</beans:bean>
 
-	<beans:bean id="personDAO"
-		class="com.temakeria.dao.PersonDAOImpl">
+	<!-- SERVICES -->
+	<beans:bean id="personService" class="com.temakeria.service.PersonServiceImpl">
+		<beans:property name="personDAO" ref="personDAO"></beans:property>
+	</beans:bean>
+	<beans:bean id="mesaService" class="com.temakeria.service.mesa.MesaServiceImpl">
+		<beans:property name="mesaDAO" ref="mesaDAO"></beans:property>
+	</beans:bean>
+
+
+	<!-- DAOs -->
+	<beans:bean id="personDAO" class="com.temakeria.dao.PersonDAOImpl">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	<beans:bean id="personService"
-		class="com.temakeria.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
+	<beans:bean id="mesaDAO" class="com.temakeria.dao.mesa.MesaDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-	
+
+
 	<context:component-scan base-package="com.temakeria" />
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
