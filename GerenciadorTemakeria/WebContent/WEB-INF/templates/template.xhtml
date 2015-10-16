@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<meta name="keywords"
+		content="simple #2, template, simpletemplates.org" />
+	<meta name="description" content="Sistema de gerenciamento" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+		rel='stylesheet' type='text/css' />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</h:head>
+
+<h:body>
+	<h:panelGroup id="panelGeral">
+		<div id="main">
+			<h:panelGroup id="panelHeader">
+				<ui:include src="/WEB-INF/templates/header.xhtml" />
+			</h:panelGroup>
+			<div class="content">
+				<ui:insert name="conteudo" />
+			</div>
+			<h:panelGroup id="panelFooter">
+				<ui:include src="/WEB-INF/templates/footer.xhtml" />
+			</h:panelGroup>
+		</div>
+	</h:panelGroup>
+</h:body>
+</html>

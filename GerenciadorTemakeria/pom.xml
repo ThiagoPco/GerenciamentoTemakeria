@@ -101,7 +101,7 @@
 			<artifactId>jsf-impl</artifactId>
 			<version>${jsf.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
@@ -152,8 +152,15 @@
 			<version>7.0</version>
 			<scope>provided</scope>
 		</dependency>
-	</dependencies>
 
+		<!-- Maven primefaces bootstraps -->
+		<dependency>
+			<groupId>org.primefaces.extensions</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.8</version>
+		</dependency>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
