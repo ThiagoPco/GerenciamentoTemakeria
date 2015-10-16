@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="conteudo">
+		<div id="contentwrap">
+			<div class="cleft">
+				<ul>
+					<li><a href="#">Cadastrar Produtos</a></li>
+				</ul>
+			</div>
+			<div class="cright">
+				<h2>Cadastro de Produtos</h2>
+				<h:form id="formProduto">
+					<p:panelGrid id="panelProduto" columns="3">
+						<p:row>
+							<p:outputLabel value="Código" />
+							<p:inputText id="codigoProduto"
+								value="#{produtoMB.produto.codProduto}" required="true" />
+							<p:message for="codigoProduto" errorClass="error" />
+						</p:row>
+
+						<p:row>
+							<p:outputLabel value="Nome do Produto" />
+							<p:inputText id="nomProduto"
+								value="#{produtoMB.produto.nomProduto}" required="true" />
+							<p:message for="nomProduto" errorClass="error" />
+						</p:row>
+
+						<p:row>
+							<p:outputLabel value="Preço do Produto" />
+							<p:inputText id="precoProduto" value="#{produtoMB.produto.preco}"
+								required="true" />
+							<p:message for="precoProduto" errorClass="error" />
+						</p:row>
+					</p:panelGrid>
+					<h:panelGroup>
+						<p:commandButton actionListener="#{produtoMB.salvarProduto()}"
+							value="Salvar" ajax="false"></p:commandButton>
+
+						<p:commandButton actionListener="#{mesaMB.buscarProduto()}"
+							value="Pesquisar" ajax="false"></p:commandButton>
+					</h:panelGroup>
+
+					<p:dataTable id="cars1" var="car" value="#{dtEditView.cars1}"
+						editable="true" style="margin-bottom:20px">
+						<f:facet name="header">
+           
+           
+           <p:panelGrid id="panelProduto" columns="3">
+           
+           
+           
+           
+           
+           
+           </p:panelGrid>
+
+
+       </f:facet>
+
+						<p:ajax event="rowEdit" listener="#{dtEditView.onRowEdit}"
+							update=":form:msgs" />
+						<p:ajax event="rowEditCancel" listener="#{dtEditView.onRowCancel}"
+							update=":form:msgs" />
+
+						<p:column headerText="Id">
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{car.id}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText id="modelInput" value="#{car.id}"
+										style="width:100%" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column headerText="Year">
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{car.year}" />
+								</f:facet>
+								<f:facet name="input">
+									<p:inputText value="#{car.year}" style="width:100%"
+										label="Year" />
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column headerText="Brand">
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{car.brand}" />
+								</f:facet>
+								<f:facet name="input">
+									<h:selectOneMenu value="#{car.brand}" style="width:100%">
+										<f:selectItems value="#{dtEditView.brands}" var="man"
+											itemLabel="#{man}" itemValue="#{man}" />
+									</h:selectOneMenu>
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column headerText="Color">
+							<p:cellEditor>
+								<f:facet name="output">
+									<h:outputText value="#{car.color}" />
+								</f:facet>
+								<f:facet name="input">
+									<h:selectOneMenu value="#{car.color}" style="width:100%">
+										<f:selectItems value="#{dtEditView.colors}" var="color"
+											itemLabel="#{color}" itemValue="#{color}" />
+									</h:selectOneMenu>
+								</f:facet>
+							</p:cellEditor>
+						</p:column>
+
+						<p:column style="width:32px">
+							<p:rowEditor />
+						</p:column>
+					</p:dataTable>
+
+
+
+
+				</h:form>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</ui:define>
+</ui:composition>
