@@ -52,7 +52,9 @@
 	<beans:bean id="mesaService" class="com.temakeria.service.mesa.MesaServiceImpl">
 		<beans:property name="mesaDAO" ref="mesaDAO"></beans:property>
 	</beans:bean>
-
+	<beans:bean id="produtoService" class="com.temakeria.service.produto.ProdutoServiceImpl">
+		<beans:property name="produtoDAO" ref="produtoDAO"></beans:property>
+	</beans:bean>
 
 	<!-- DAOs -->
 	<beans:bean id="personDAO" class="com.temakeria.dao.PersonDAOImpl">
@@ -63,7 +65,10 @@
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />
 	</beans:bean>
-
+	<beans:bean id="produtoDAO" class="com.temakeria.dao.produto.ProdutoDAOImpl">
+		<beans:property name="sessionFactory"
+			ref="hibernate4AnnotatedSessionFactory" />
+	</beans:bean>
 
 	<context:component-scan base-package="com.temakeria" />
 

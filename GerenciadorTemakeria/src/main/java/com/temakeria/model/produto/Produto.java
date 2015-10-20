@@ -11,19 +11,26 @@ public class Produto extends EntidadeBD{
 
 	private static final long serialVersionUID = 1185445696433774287L;
 	
-	private int codProduto;
+	private String codProduto;
     private String nomProduto;
-    private String descProduto;
     private double preco;
+    
     
 	public Produto() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getCodProduto() {
+	public Produto(String codProduto, String nomProduto, double preco) {
+		super();
+		this.codProduto = codProduto;
+		this.nomProduto = nomProduto;
+		this.preco = preco;
+	}
+
+	public String getCodProduto() {
 		return codProduto;
 	}
-	public void setCodProduto(int codProduto) {
+	public void setCodProduto(String codProduto) {
 		this.codProduto = codProduto;
 	}
 	public String getNomProduto() {
@@ -32,16 +39,13 @@ public class Produto extends EntidadeBD{
 	public void setNomProduto(String nomProduto) {
 		this.nomProduto = nomProduto;
 	}
-	public String getDescProduto() {
-		return descProduto;
-	}
-	public void setDescProduto(String descProduto) {
-		this.descProduto = descProduto;
-	}
 	public double getPreco() {
 		return preco;
 	}
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+	
+
+     
 }

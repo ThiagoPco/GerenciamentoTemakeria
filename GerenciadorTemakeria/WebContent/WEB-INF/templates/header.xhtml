@@ -8,26 +8,71 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 
 <body>
+	<!-- BEGIN HEADER TOP -->
 
-	<div id="top">
-
-		<div id="header">
-			<h1>Comanda Rapida</h1>
+	<div class="page-header-top">
+		<div class="container">
+			<!-- BEGIN LOGO -->
+			<div class="page-logo"></div>
+			<!-- END RESPONSIVE MENU TOGGLER -->
 		</div>
-		<div id="topmenu">
-			<ul>
-				<li><a href="#">teste</a></li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">What We Do</a></li>
-				<li><a href="#">The Team</a></li>
-				<li><a href="#">Contact Us</a></li>
-			</ul>
-		</div>
-
-		<div class="clear"></div>
-
 	</div>
-	
+
+	<div class="page-header-menu">
+		<div class="container">
+			<form class="search-form">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search"
+						name="query" /> <span class="input-group-btn"> <a
+						class="btn submit"><i class="icon-magnifier"></i></a>
+					</span>
+				</div>
+			</form>
+			<div class="hor-menu ">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="dashboard.xhtml">Dashboard</a></li>
+
+					<li class="menu-dropdown classic-menu-dropdown ">
+						<a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown">
+						 Gerenciamento<i class="fa fa-angle-down"></i>
+						</a>
+						<ul class="dropdown-menu pull-left">
+							<li class=" dropdown-submenu">
+								<a href=":;">
+								<i class="icon-briefcase"></i>
+								Produtos </a>
+								<ul class="dropdown-menu">
+									<li class=" ">
+										<a href="cadastroProduto.xhtml">
+										Cadastro de Produtos </a>
+									</li>
+									<li class=" ">
+										<a href="table_tree.html">
+										Controle de Estoque </a>
+									</li>
+								</ul>
+							</li>
+							<li class=" dropdown-submenu">
+								<a href=":;">
+								<i class="icon-wallet"></i>
+								Vendas </a>
+								<ul class="dropdown-menu">
+									<li class=" ">
+										<a href="portlet_general.html">
+										Consulta de Vendas </a>
+									</li>
+									<li class=" ">
+										<a href="portlet_ajax.html">
+										Faturamento </a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
