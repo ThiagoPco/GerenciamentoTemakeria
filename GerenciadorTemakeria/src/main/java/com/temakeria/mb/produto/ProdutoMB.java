@@ -93,8 +93,9 @@ public class ProdutoMB {
 
 
 	public void salvarProduto() {
-		System.out.println("teste");
 		
+		prodList.add(prodCadastrar);
+		prodCadastrar = new Produto();
 	}
 
 

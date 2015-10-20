@@ -9,21 +9,20 @@
 	template="/WEB-INF/templates/template.xhtml">
 
 	<ui:define name="conteudo">
-
 		<div class="page-content">
 			<div class="container">
-				<ul class="page-breadcrumb breadcrumb">
-					<li><a href="dashboard.xhtml">Dashboard</a><i
-						class="fa fa-circle"></i></li>
-					<li><a href="blankPage.xhtml">Blank Page</a></li>
-				</ul>
+				<h:form>
+					<ul class="page-breadcrumb breadcrumb">
+						<li><a href="dashboard.xhtml">Dashboard</a><i
+							class="fa fa-circle"></i></li>
+						<li><a href="blankPage.xhtml">Blank Page</a></li>
+					</ul>
 
-				
+					<p:commandButton value="Ajax Submit" id="ajax"
+						actionListener="#{produtoMB.salvarProduto()}" />
 
-
-
-
-				<!-- END PAGE CONTENT INNER -->
+					<!-- END PAGE CONTENT INNER -->
+				</h:form>
 			</div>
 		</div>
 	</ui:define>

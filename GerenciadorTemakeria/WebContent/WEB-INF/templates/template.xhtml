@@ -55,7 +55,7 @@
 	<div class="page-header">
 		<ui:include src="/WEB-INF/templates/header.xhtml" />
 	</div>
-	<div class="page-container">
+	<div >
 		<ui:insert name="conteudo" />
 	</div>
 	<div>
@@ -65,9 +65,10 @@
 	<script>
 	jQuery(document).ready(function() {       
 		   Metronic.init(); // init metronic core components
-		Layout.init(); // init current layout
-		Demo.init(); // init demo features
+		   Layout.init(); // init current layout
+		   Demo.init(); // init demo features
 		   TableEditable.init();
+           UIBlockUI.init();
 		});
    </script>
 

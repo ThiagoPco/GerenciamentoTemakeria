@@ -10,8 +10,9 @@ import com.temakeria.model.mesa.Mesa;
 import com.temakeria.service.mesa.MesaService;
 
 @Controller
-@ManagedBean(name = "personService")
+@ManagedBean(name = "ProdutoService")
 @SessionScoped
+
 public class MesaMB {
 
 	@Autowired
