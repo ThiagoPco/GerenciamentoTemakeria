@@ -6,12 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
-import org.primefaces.event.RowEditEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -36,6 +33,8 @@ public class ProdutoMB {
 	private Map<String,String> countries;
 	
 	private List<Produto> prodList = new ArrayList<Produto>();
+	
+	private Produto prodCadastrar = new Produto();
 	
 	//----------------------------------------------------------------------------
 	
@@ -79,30 +78,22 @@ public class ProdutoMB {
 		this.prodList = prodList;
 	}
 
+	
 	//----------------------------------------------------------------------------
 	
 
+	public Produto getProdCadastrar() {
+		return prodCadastrar;
+	}
+
+
+	public void setProdCadastrar(Produto prodCadastrar) {
+		this.prodCadastrar = prodCadastrar;
+	}
+
+
 	public void salvarProduto() {
 		System.out.println("teste");
-		
-	}
-
-	public void buscarProduto() {
-		
-		System.out.println("teste");
-	}
-
-	
-	//Métodos para edição da tabela.
-	public void onRowEdit(RowEditEvent event) {
-		FacesMessage msg = new FacesMessage(FacesMessage.SEVERITY_INFO,"Produto Editado", ((Produto) event.getObject()).getCodProduto());
-		FacesContext.getCurrentInstance().addMessage(null, msg);	
-		
-	}
-
-	public void onRowCancel(RowEditEvent event) {
-		FacesMessage msg = new FacesMessage("Edição Cancelada", ((Produto) event.getObject()).getCodProduto());
-		FacesContext.getCurrentInstance().addMessage(null, msg);
 		
 	}
 

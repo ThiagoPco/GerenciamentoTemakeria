@@ -14,6 +14,7 @@ public class Produto extends EntidadeBD{
 	private String codProduto;
     private String nomProduto;
     private double preco;
+    private String unidade;
     
     
 	public Produto() {
@@ -45,7 +46,11 @@ public class Produto extends EntidadeBD{
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
+	public String getUnidade() {
+		return unidade;
+	}
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
+	}
 	
-
-     
 }
