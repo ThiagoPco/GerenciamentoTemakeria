@@ -2,7 +2,6 @@ package com.temakeria.service;
 
 import java.util.List;
 
-//rrrr
 public interface GenericService<T> {
 	void salvar(T t);
 	void excluir(Long id);

@@ -13,7 +13,7 @@ public class Produto extends EntidadeBD{
 	
 	private String codProduto;
     private String nomProduto;
-    private double preco;
+    private Double preco;
     private String unidade;
     
     
@@ -21,7 +21,7 @@ public class Produto extends EntidadeBD{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Produto(String codProduto, String nomProduto, double preco) {
+	public Produto(String codProduto, String nomProduto, Double preco) {
 		super();
 		this.codProduto = codProduto;
 		this.nomProduto = nomProduto;
@@ -40,10 +40,10 @@ public class Produto extends EntidadeBD{
 	public void setNomProduto(String nomProduto) {
 		this.nomProduto = nomProduto;
 	}
-	public double getPreco() {
+	public Double getPreco() {
 		return preco;
 	}
-	public void setPreco(double preco) {
+	public void setPreco(Double preco) {
 		this.preco = preco;
 	}
 	public String getUnidade() {

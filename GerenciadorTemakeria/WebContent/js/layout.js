@@ -286,11 +286,11 @@ var Layout = function () {
         },
 
         getLayoutImgPath: function() {
-            return Metronic.getAssetsPath() + layoutImgPath;
+            return layoutImgPath;
         },
 
         getLayoutCssPath: function() {
-            return Metronic.getAssetsPath() + layoutCssPath;
+            return layoutCssPath;
         }
     };
 

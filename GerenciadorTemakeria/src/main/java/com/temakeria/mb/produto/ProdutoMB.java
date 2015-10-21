@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.Assert;
 
 import com.temakeria.model.produto.Produto;
 import com.temakeria.service.produto.ProdutoService;
@@ -94,11 +97,15 @@ public class ProdutoMB {
 
 	public void salvarProduto() {
 		
+		validarFrontEnd();
+		
 		prodList.add(prodCadastrar);
 		prodCadastrar = new Produto();
 	}
 
-
+	public void validarFrontEnd() {
+		
+	}
 	//Inicio dos get`s set`s da página de produto
 	
 	public boolean isPesquisa() {
