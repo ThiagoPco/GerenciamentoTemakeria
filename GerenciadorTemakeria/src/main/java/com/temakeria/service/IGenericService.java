@@ -2,10 +2,12 @@ package com.temakeria.service;
 
 import java.util.List;
 
-//rrrr
-public interface GenericService<T> {
+public interface IGenericService<T> {
 	void salvar(T t);
+
 	void excluir(Long id);
+
 	void alterar(T t);
+
 	List<T> listar();
 }

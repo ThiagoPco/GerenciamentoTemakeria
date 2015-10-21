@@ -24,7 +24,7 @@
 		<beans:property name="url"
 			value="jdbc:mysql://localhost:3306/Temakeria" />
 		<beans:property name="username" value="root" />
-		<beans:property name="password" value="" />
+		<beans:property name="password" value="tg220190" />
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
@@ -33,7 +33,8 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>com.temakeria.model.Person</beans:value>
+			<beans:value>com.temakeria.model.EntidadeBD</beans:value>
+				<beans:value>com.temakeria.model.mesa.Mesa</beans:value>
 			</beans:list>
 		</beans:property>
 		<beans:property name="hibernateProperties">
@@ -46,9 +47,6 @@
 	</beans:bean>
 
 	<!-- SERVICES -->
-	<beans:bean id="personService" class="com.temakeria.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
-	</beans:bean>
 	<beans:bean id="mesaService" class="com.temakeria.service.mesa.MesaServiceImpl">
 		<beans:property name="mesaDAO" ref="mesaDAO"></beans:property>
 	</beans:bean>
@@ -57,10 +55,6 @@
 	</beans:bean>
 
 	<!-- DAOs -->
-	<beans:bean id="personDAO" class="com.temakeria.dao.PersonDAOImpl">
-		<beans:property name="sessionFactory"
-			ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
 	<beans:bean id="mesaDAO" class="com.temakeria.dao.mesa.MesaDAOImpl">
 		<beans:property name="sessionFactory"
 			ref="hibernate4AnnotatedSessionFactory" />

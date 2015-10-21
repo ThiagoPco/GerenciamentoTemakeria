@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.temakeria.dao.produto.ProdutoDAO;
 import com.temakeria.model.produto.Produto;
-import com.temakeria.service.GenericService;
+import com.temakeria.service.IGenericService;
 
-public class ProdutoServiceImpl implements ProdutoService, GenericService<Produto> {
+public class ProdutoServiceImpl implements ProdutoService, IGenericService<Produto> {
 
 	private ProdutoDAO produtoDAO;
 
