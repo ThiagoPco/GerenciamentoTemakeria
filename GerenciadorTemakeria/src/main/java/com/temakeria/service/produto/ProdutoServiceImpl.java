@@ -67,8 +67,8 @@ public class ProdutoServiceImpl implements ProdutoService, IGenericService<Produ
         return buffer.toString();
     }
      
-    public int getRandomPrice() {
-        return (int) (Math.random() * 100000);
+    public Double getRandomPrice() {
+        return (Double) (Math.random() * 100000);
     }
 
     
