@@ -6,30 +6,35 @@ import javax.persistence.Table;
 import com.temakeria.model.EntidadeBD;
 
 @Entity
-@Table(name="MESA")
-public class Mesa extends EntidadeBD{
+@Table(name = "MESA")
+public class Mesa extends EntidadeBD {
 
 	private static final long serialVersionUID = 5470745842260307281L;
 
-	private int codigo;
-    private String qtdPessoas;
-    private String descricao;
-    
-	public int getCodigo() {
+	private Integer codigo;
+	private Integer qtdPessoas;
+	private String descricao;
+
+	public Integer getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
+
+	public void setCodigo(Integer codigo) {
 		this.codigo = codigo;
 	}
-	public String getQtdPessoas() {
+
+	public Integer getQtdPessoas() {
 		return qtdPessoas;
 	}
-	public void setQtdPessoas(String qtdPessoas) {
+
+	public void setQtdPessoas(Integer qtdPessoas) {
 		this.qtdPessoas = qtdPessoas;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}

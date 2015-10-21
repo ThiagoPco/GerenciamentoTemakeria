@@ -6,7 +6,7 @@ import com.temakeria.dao.GenericDAO;
 import com.temakeria.model.mesa.Mesa;
 
 @Repository
-public class MesaDAOImpl extends GenericDAO<Mesa> implements MesaDAO {
+public class MesaDAOImpl extends GenericDAO<Mesa> implements IMesaDAO {
 	//private static final Logger logger = LoggerFactory.getLogger(MesaDAOImpl.class);
 	
 }

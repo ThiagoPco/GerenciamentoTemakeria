@@ -2,41 +2,41 @@ package com.temakeria.service.mesa;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.temakeria.dao.mesa.MesaDAO;
+import com.temakeria.dao.mesa.IMesaDAO;
 import com.temakeria.model.mesa.Mesa;
-import com.temakeria.service.GenericService;
 
-public class MesaServiceImpl implements MesaService, GenericService<Mesa> {
+public class MesaServiceImpl implements IMesaService {
 
-	private MesaDAO mesaDAO;
+	@Autowired
+	private IMesaDAO mesaDAO;
 
-	public void setMesaDAO(MesaDAO mesaDAO) {
+	public void setMesaDAO(IMesaDAO mesaDAO) {
 		this.mesaDAO = mesaDAO;
 	}
 
 	@Override
 	@Transactional
-	public void salvar(Mesa t) {
-		// TODO Auto-generated method stub
+	public void salvar(Mesa mesa) {
+		mesaDAO.salvar(mesa);
 	}
 
 	@Override
 	@Transactional
 	public void excluir(Long id) {
-		// TODO Auto-generated method stub
+		mesaDAO.excluir(id);
 	}
 
 	@Override
 	@Transactional
-	public void alterar(Mesa t) {
-		// TODO Auto-generated method stub
+	public void alterar(Mesa mesa) {
+		mesaDAO.alterar(mesa);
 	}
 
 	@Override
 	public List<Mesa> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		return mesaDAO.listar();
 	}
 }
