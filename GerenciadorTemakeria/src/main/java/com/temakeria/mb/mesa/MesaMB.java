@@ -1,22 +1,23 @@
 package com.temakeria.mb.mesa;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.temakeria.model.mesa.Mesa;
 import com.temakeria.service.mesa.IMesaService;
 
 @Controller
-@ManagedBean(name = "mesaMB")
-@SessionScoped
-public class MesaMB {
+@Scope("session")
+public class MesaMB implements Serializable {
+
+	private static final long serialVersionUID = -4549601071062076464L;
 
 	@Autowired
 	IMesaService mesaService;
@@ -43,18 +44,24 @@ public class MesaMB {
 	public void salvarMesa() {
 		mesa.setId(0);
 		mesaService.salvar(mesa);
+		mesasPesquisa = mesaService.listar();
 	}
 
 	public void editarMesa() {
 		mesaService.alterar(mesa);
 	}
 
-	public void excluirMesa() {
-		mesaService.excluir(1L);
+	public void alterarMesa(Mesa mesa) {
+		this.mesa = mesa;
+	}
+
+	public void excluirMesa(Long id) {
+		mesaService.excluir(id);
 	}
 
 	@PostConstruct
 	public void iniciarTela() {
-		// mesasPesquisa = mesaService.listar();
+		mesasPesquisa = mesaService.listar();
 	}
+
 }

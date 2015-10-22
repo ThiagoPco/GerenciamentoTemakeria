@@ -10,6 +10,8 @@ import com.temakeria.model.mesa.Mesa;
 
 public class MesaServiceImpl implements IMesaService {
 
+	private static final long serialVersionUID = -4654674435514475237L;
+
 	@Autowired
 	private IMesaDAO mesaDAO;
 
@@ -36,6 +38,7 @@ public class MesaServiceImpl implements IMesaService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public List<Mesa> listar() {
 		return mesaDAO.listar();
 	}

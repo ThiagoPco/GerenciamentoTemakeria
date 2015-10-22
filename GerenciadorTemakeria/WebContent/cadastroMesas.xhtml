@@ -92,8 +92,7 @@
 									<div class="caption">
 										<i class="icon-pencil font-green-sharp"></i> <span
 											class="caption-subject font-green-sharp bold uppercase">
-											Mesas </span> <span class="caption-helper">Edição de
-											Mesas</span>
+											Mesas </span> <span class="caption-helper">Edição de Mesas</span>
 									</div>
 								</div>
 
@@ -106,6 +105,10 @@
 											role="grid">
 											<thead>
 												<tr>
+												<th class="sorting" tabindex="0"
+														aria-controls="table_produto" rowspan="1" colspan="1"
+														aria-label=" Código : activate to sort column descending"
+														style="width: 163px;" aria-sort="ascending">Id</th>
 													<th class="sorting" tabindex="0"
 														aria-controls="table_produto" rowspan="1" colspan="1"
 														aria-label=" Código : activate to sort column descending"
@@ -113,24 +116,30 @@
 													<th class="sorting_asc" tabindex="0"
 														aria-controls="table_produto" rowspan="1" colspan="1"
 														aria-label=" Nome : activate to sort column descending"
-														style="width: 163px;" aria-sort="ascending">Qtd. Pessoas</th>
+														style="width: 163px;" aria-sort="ascending">Qtd.
+														Pessoas</th>
 													<th class="sorting" tabindex="0"
 														aria-controls="table_produto" rowspan="1" colspan="1"
 														aria-label=" Preco : activate to sort column descending"
 														style="width: 163px;" aria-sort="ascending">Descricao</th>
-													<th class="sorting" tabindex="0"
-														aria-controls="table_produto" rowspan="1" colspan="1"
-														aria-label=" Edit : activate to sort column ascending"
-														style="width: 100px;"> Editar  /  Ecluir</th>
+													<th	 rowspan="1" colspan="1"														
+														style="width: 100px;">Editar / Ecluir</th>
 												</tr>
 											</thead>
 											<tbody>
 												<ui:repeat var="mesa" value="#{mesaMB.mesasPesquisa}">
 													<tr role="row" class="odd">
-														<td>"#{mesa.codigo}"</td>
-														<td class="sorting_1">"#{mesa.qtdPessoas}"</td>
-														<td class="center">"#{mesa.descricao}"</td>
-														<td><a class="edit" href="javascript:;"> Edit</a></td>
+														<td>#{mesa.id}</td>
+														<td>#{mesa.codigo}</td>
+														<td class="sorting_1">#{mesa.qtdPessoas}</td>
+														<td class="center">#{mesa.descricao}</td>
+														<td>
+														
+														<p:commandLink actionListener="#{mesaMB.alterarMesa(mesa)}"
+															value="Alterar" ajax="false" class="edit" ></p:commandLink>
+														<p:commandLink actionListener="#{mesaMB.excluirMesa(mesa.id)}"
+															value="Alterar" ajax="false" class="edit" ></p:commandLink>
+														</td>
 													</tr>
 												</ui:repeat>
 											</tbody>

@@ -1,8 +1,9 @@
 package com.temakeria.service;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface IGenericService<T> {
+public interface IGenericService<T> extends Serializable {
 	void salvar(T t);
 
 	void excluir(Long id);

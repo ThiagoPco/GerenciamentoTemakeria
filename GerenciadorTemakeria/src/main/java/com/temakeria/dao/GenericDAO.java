@@ -1,7 +1,6 @@
 package com.temakeria.dao;
 
 import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -30,8 +29,9 @@ public class GenericDAO<T extends EntidadeBD> {
 	}
 
 	public List<T> listar() {
-		getSession().createQuery(("FROM " + getTypeClass().getName())).list();
-		return new ArrayList<T>();
+		List<T> list = getSession().createQuery(
+				("FROM " + getTypeClass().getSimpleName())).list();
+		return list;
 	}
 
 	private Class<?> getTypeClass() {

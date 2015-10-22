@@ -1,10 +1,11 @@
 package com.temakeria.dao;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.temakeria.model.EntidadeBD;
 
-public interface IGenericDAO<T extends EntidadeBD> {
+public interface IGenericDAO<T extends EntidadeBD> extends Serializable {
 
 	public void salvar(T entidade);
 
