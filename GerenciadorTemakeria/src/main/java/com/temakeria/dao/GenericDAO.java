@@ -24,8 +24,8 @@ public class GenericDAO<T extends EntidadeBD> {
 		getSession().update(entidade);
 	}
 
-	public void excluir(Long id) {
-		getSession().delete(id);
+	public void excluir(T entidade) {
+		getSession().delete(entidade);
 	}
 
 	public List<T> listar() {

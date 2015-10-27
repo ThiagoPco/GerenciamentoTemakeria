@@ -11,7 +11,7 @@ public interface IGenericDAO<T extends EntidadeBD> extends Serializable {
 
 	public void alterar(T entidade);
 
-	public void excluir(Long id);
+	public void excluir(T entidade);
 
 	public List<T> listar();
 }

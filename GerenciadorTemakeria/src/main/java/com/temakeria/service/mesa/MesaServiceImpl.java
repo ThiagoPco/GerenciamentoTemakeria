@@ -27,8 +27,8 @@ public class MesaServiceImpl implements IMesaService {
 
 	@Override
 	@Transactional
-	public void excluir(Long id) {
-		mesaDAO.excluir(id);
+	public void excluir(Mesa entidade) {
+		mesaDAO.excluir(entidade);
 	}
 
 	@Override

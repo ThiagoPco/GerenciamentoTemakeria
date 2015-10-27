@@ -24,6 +24,15 @@ public class MesaMB implements Serializable {
 
 	private Mesa mesa = new Mesa();
 	private List<Mesa> mesasPesquisa = new ArrayList<Mesa>();
+	private boolean alteracao;
+
+	public boolean isAlteracao() {
+		return alteracao;
+	}
+
+	public void setAlteracao(boolean isAlteracao) {
+		this.alteracao = isAlteracao;
+	}
 
 	public Mesa getMesa() {
 		return mesa;
@@ -42,9 +51,10 @@ public class MesaMB implements Serializable {
 	}
 
 	public void salvarMesa() {
-		mesa.setId(0);
+		this.mesa.setId(0);
 		mesaService.salvar(mesa);
 		mesasPesquisa = mesaService.listar();
+		this.mesa = new Mesa();
 	}
 
 	public void editarMesa() {
@@ -53,15 +63,25 @@ public class MesaMB implements Serializable {
 
 	public void alterarMesa(Mesa mesa) {
 		this.mesa = mesa;
+		this.alteracao = true;
 	}
 
-	public void excluirMesa(Long id) {
-		mesaService.excluir(id);
+	public void alterarMesa() {
+		mesaService.alterar(mesa);
+	}
+
+	public void cancelarAlteracao() {
+		this.mesa = new Mesa();
+		this.alteracao = false;
+	}
+
+	public void excluirMesa(Mesa mesa) {
+		mesaService.excluir(mesa);
+		mesasPesquisa = mesaService.listar();
 	}
 
 	@PostConstruct
 	public void iniciarTela() {
 		mesasPesquisa = mesaService.listar();
 	}
-
 }

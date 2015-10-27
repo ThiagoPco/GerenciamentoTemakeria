@@ -10,7 +10,8 @@ import com.temakeria.dao.produto.ProdutoDAO;
 import com.temakeria.model.produto.Produto;
 import com.temakeria.service.IGenericService;
 
-public class ProdutoServiceImpl implements ProdutoService, IGenericService<Produto> {
+public class ProdutoServiceImpl implements ProdutoService,
+		IGenericService<Produto> {
 
 	private ProdutoDAO produtoDAO;
 
@@ -22,7 +23,7 @@ public class ProdutoServiceImpl implements ProdutoService, IGenericService<Produ
 
 	@Override
 	@Transactional
-	public void excluir(Long id) {
+	public void excluir(Produto id) {
 		// TODO Auto-generated method stub
 	}
 
@@ -37,43 +38,41 @@ public class ProdutoServiceImpl implements ProdutoService, IGenericService<Produ
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	//MÉTODOS PARA TESTE DE TABELA.
+
+	// MÉTODOS PARA TESTE DE TABELA.
 	@Override
 	public List<Produto> createProducts(int size) {
-        List<Produto> list = new ArrayList<Produto>();
-        for(int i = 0 ; i < size ; i++) {
-            list.add(new Produto(getRandomId(),getRandomName(),getRandomPrice()));
-        }
-         
-        return list;
-    }
-     
-    private String getRandomId() {
-        return UUID.randomUUID().toString().substring(0, 8);
-    }
-     
-    private String getRandomName() {
-    	
-    	StringBuffer buffer = new StringBuffer();
-    	String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    	int charactersLength = characters.length();
-    	for (int i = 0; i < 5; i++) {
+		List<Produto> list = new ArrayList<Produto>();
+		for (int i = 0; i < size; i++) {
+			list.add(new Produto(getRandomId(), getRandomName(),
+					getRandomPrice()));
+		}
+
+		return list;
+	}
+
+	private String getRandomId() {
+		return UUID.randomUUID().toString().substring(0, 8);
+	}
+
+	private String getRandomName() {
+
+		StringBuffer buffer = new StringBuffer();
+		String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		int charactersLength = characters.length();
+		for (int i = 0; i < 5; i++) {
 			double index = Math.random() * charactersLength;
 			buffer.append(characters.charAt((int) index));
 		}
-    	
-        return buffer.toString();
-    }
-     
-    public Double getRandomPrice() {
-        return (Double) (Math.random() * 100000);
-    }
 
-    
-    
-    //get set autowired
+		return buffer.toString();
+	}
+
+	public Double getRandomPrice() {
+		return Math.random() * 100000;
+	}
+
+	// get set autowired
 	public void setProdutoDAO(ProdutoDAO produtoDAO) {
 		this.produtoDAO = produtoDAO;
 	}

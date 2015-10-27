@@ -6,7 +6,7 @@ import java.util.List;
 public interface IGenericService<T> extends Serializable {
 	void salvar(T t);
 
-	void excluir(Long id);
+	void excluir(T t);
 
 	void alterar(T t);
 
